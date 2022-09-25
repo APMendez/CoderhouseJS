@@ -1,3 +1,4 @@
+//Funcion para saludar al usuario
 function bienvenida() {
     let nombre = prompt("Ingresá tu nombre para comenzar");
     if (nombre != ""){
@@ -8,6 +9,7 @@ function bienvenida() {
     }
 }
 
+//Funcion del menu principal
 function inicio() {
     for (let i = 5; i>0; i--) {
         let opcion = prompt("Elegí una opción (Tenés " + i + "intentos): \n1- Ordenar \n2 - Ver mi orden \n3 - Pagar \n4- Finalizar");
@@ -34,6 +36,7 @@ function inicio() {
     }
 
 }
+//Funcion para hacer un pedido
 function ordenar(){
     let comida = ""
     while (comida != "x"){
@@ -49,19 +52,25 @@ function ordenar(){
     
 }
 
+//Funcion para ver el pedido realizado
 function verOrden(){
     alert ("detalle de tu pedido:\n" + pedido);
     inicio();
 }
 
+//Funcion para pagar el pedido
 function pagar(){
     alert("Deberás pagar $5000 por tu pedido");
     inicio();
 }
 
+//Funcion de finalizacion del proceso
 function finalizar(){
     alert("¡Gracias por elegirnos!");
 }
+
+
+//Ejecucion del programa
 
 bienvenida();
 let pedido=[];
