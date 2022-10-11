@@ -1,4 +1,3 @@
-window.onload = () => {
     //Funcion para saludar al usuario
     function bienvenida() {
         let nombre = prompt("Ingresá tu nombre para comenzar");
@@ -9,7 +8,7 @@ window.onload = () => {
             bienvenida();
         }
     }
-
+    
     //Funcion del menu principal
     function inicio() {
         for (let i = 5; i > 0; i--) {
@@ -39,12 +38,12 @@ window.onload = () => {
                         break;
                 }
                 break;
-
+    
             } else {
                 alert("La opción ingresada no es válida")
             }
         }
-
+    
     }
     //Funcion para hacer un pedido
     function ordenar() {
@@ -68,7 +67,7 @@ window.onload = () => {
         } while (continuar != "x");
         inicio();
     }
-
+    
     //Funcion para eliminar opciones del pedido
     function eliminarPedido() {
         console.log("Su pedido es: ");
@@ -80,8 +79,8 @@ window.onload = () => {
         console.log("Pedido Eliminado");
         inicio();
     }
-
-
+    
+    
     //Funcion para ver el pedido realizado
     function verOrden() {
         console.log("Su pedido es: ");
@@ -90,7 +89,7 @@ window.onload = () => {
         };
         inicio();
     }
-
+    
     //Funcion para pagar el pedido
     function pagar() {
         let total = 0
@@ -99,18 +98,18 @@ window.onload = () => {
         };
         console.log("El total a pagar por su pedido es: $" + total + ". Pro favor acerquese a la caja, aceptamos todos los medios de pago. Gracias!");
     }
-
+    
     //Funcion de finalizacion del proceso
     function finalizar() {
         alert("¡Gracias por elegirnos!");
     }
-
+    
     //Funcion para crear opciones del menu
     function platoNuevo(nombre, precio) {
         this.nombre = nombre;
         this.precio = precio;
     }
-
+    
     //Funcion para agregar opciones al menu
     function agregarAlMenu() {
         let nombrePlato = prompt("Ingresa el nombre del nuevo plato. Para volver al menu principal ingresa X");
@@ -121,20 +120,21 @@ window.onload = () => {
         }
         verMenu();
     }
-
-
+    
+    
     //Funcion para ver el menú
-
+    
     function verMenu() {
-        for (plato of menu) {
+        for (let plato of menu) {
             console.log(plato.nombre + " ---> su precio: $" + plato.precio);
         };
         inicio();
     }
-
-
+    
+    
     //Ejecucion del programa
-
+    
+    
     bienvenida();
     let pedido = [];
     let menu = [{
@@ -166,4 +166,4 @@ window.onload = () => {
         precio: 1000
     }];
     inicio();
-}
+
