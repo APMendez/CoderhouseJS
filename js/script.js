@@ -134,36 +134,20 @@
     
     //Ejecucion del programa
     
+    let pedido =[];
+    let menu1 = document.getElementById("menu");
+    let seleccion = menu1.getElementsByTagName("input")
+    let btnOrdenar = document.getElementById("ordenar")
+    btnOrdenar.addEventListener("click", enviarPedido)
+    function enviarPedido(){
+        for (opcion in seleccion){
+            if (opcion.input != 0){
+                pedido.push(opcion.value)
+            }
+        }
+        console.log(pedido);
+    }
     
-    bienvenida();
-    let pedido = [];
-    let menu = [{
-        nombre: "carne al horno",
-        precio: 1500
-    }, {
-        nombre: "papas",
-        precio: 500
-    }, {
-        nombre: "ravioles con tuco",
-        precio: 1400
-    }, {
-        nombre: "pizza napolitana",
-        precio: 1500
-    }, {
-        nombre: "arroz con pollo",
-        precio: 900
-    }, {
-        nombre: "lasagna con salsa mixta",
-        precio: 1300
-    }, {
-        nombre: "sopa de calabaza",
-        precio: 800
-    }, {
-        nombre: "carne ahumada",
-        precio: 900
-    }, {
-        nombre: "papas a la huancaina",
-        precio: 1000
-    }];
-    inicio();
+
+    
 

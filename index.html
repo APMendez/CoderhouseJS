@@ -1,20 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto JS Coderhouse</title>
+    <!-- CDN Bootstrap -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
     <!-- Hoja de estilo personalizada -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1>PRIMERA ENTREGA PROYECTO FINAL JS</h1>
+    <h1>¡BIENVENIDO/A A SIAP!</h1>
 
-    <p>Este proyecto intenta simular una aplicacion web para gestion de pedidos en un restaurant o local gastronomico.</p>
+    <h2>SISTEMA INTEGRAL DE AUTOGESTION DE PEDIDOS</h2>
 
+    <h3>Mirá nuestro menú y hacé tu orden:</h3>
 
-    <!-- Archivo JS propio -->
-    <script src="js/script.js"></script>
+    
+    
+    <div>
+        <ul id="menu">
+            <li><label for="carne">Carne al horno con papas</label>
+                <input type="number" max="9" min="0" value="0" name="cantidad" id="carne">
+            </li>
+            <li><label for="lasagna">Lasagna de verdura y Ricotta</label>
+                <input type="number" max="9" min="0" value="0" name="cantidad" id="lasagna">
+            </li>
+            <li><label for="milanesa">Milanesa a la napolitana con papas fritas</label>
+                <input type="number" max="9" min="0" value="0" name="cantidad" id="milanesa">
+            </li>
+            <li><label for="pizza">Pizza a los cuatro quesos</label>
+                <input type="number" max="9" min="0" value="0" name="cantidad" id="pizza">
+            </li>
+            <li><label for="pastelDePapa">Pastel de papa</label>
+                <input type="number" max="9" min="0" value="0" name="cantidad" id="pastelDePapa">
+            </li>
+            <li><label for="gaseosa">Gaseosa</label>
+                <input type="number" max="9" min="0" value="0" name="cantidad" id="gaseosa">
+            </li>
+            <li><label for="cerveza">Cerveza</label>
+                <input type="number" max="9" min="0" value="0" name="cantidad" id="cerveza">
+            </li>
+            <li><label for="vino">Vino</label>
+                <input type="number" max="9" min="0" value="0" name="cantidad" id="vino">
+            </li>
+            <li><label for="agua">Agua Mineral</label>
+                <input type="number" max="9" min="0" value="0" name="cantidad" id="agua">
+            </li>
+        </ul>
+
+        <button type="submit" id="ordenar">Ordenar</button>
+    </div>
+
+        <!-- Archivo JS propio -->
+        <script src="js/script.js"></script>
 </body>
+
 </html>
