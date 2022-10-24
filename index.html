@@ -16,50 +16,28 @@
 </head>
 
 <body>
-    <h1>¡BIENVENIDO/A A SIAP!</h1>
+    <main>
+        <h1>¡BIENVENIDO/A A SIAP!</h1>
 
     <h2>SISTEMA INTEGRAL DE AUTOGESTION DE PEDIDOS</h2>
 
     <h3>Mirá nuestro menú y hacé tu orden:</h3>
 
-    
-    
+    <div id="contenedorMenu"></div>
+
+    <button type="submit" id="ordenar">Ordenar</button>
+    <button type="submit" id="verPedido">Ver mi Pedido</button>
+
     <div>
-        <ul id="menu">
-            <li><label for="carne">Carne al horno con papas</label>
-                <input type="number" max="9" min="0" value="0" name="cantidad" id="carne">
-            </li>
-            <li><label for="lasagna">Lasagna de verdura y Ricotta</label>
-                <input type="number" max="9" min="0" value="0" name="cantidad" id="lasagna">
-            </li>
-            <li><label for="milanesa">Milanesa a la napolitana con papas fritas</label>
-                <input type="number" max="9" min="0" value="0" name="cantidad" id="milanesa">
-            </li>
-            <li><label for="pizza">Pizza a los cuatro quesos</label>
-                <input type="number" max="9" min="0" value="0" name="cantidad" id="pizza">
-            </li>
-            <li><label for="pastelDePapa">Pastel de papa</label>
-                <input type="number" max="9" min="0" value="0" name="cantidad" id="pastelDePapa">
-            </li>
-            <li><label for="gaseosa">Gaseosa</label>
-                <input type="number" max="9" min="0" value="0" name="cantidad" id="gaseosa">
-            </li>
-            <li><label for="cerveza">Cerveza</label>
-                <input type="number" max="9" min="0" value="0" name="cantidad" id="cerveza">
-            </li>
-            <li><label for="vino">Vino</label>
-                <input type="number" max="9" min="0" value="0" name="cantidad" id="vino">
-            </li>
-            <li><label for="agua">Agua Mineral</label>
-                <input type="number" max="9" min="0" value="0" name="cantidad" id="agua">
-            </li>
-        </ul>
-
-        <button type="submit" id="ordenar">Ordenar</button>
+        <p>El total de tu orden hasta ahora es: $<span id="sumaTotal"></span></p>
     </div>
+    <button type="submit">¡Quiero pagar!</button>
+    </main>
+    
 
-        <!-- Archivo JS propio -->
-        <script src="js/script.js"></script>
+    <!-- Archivo JS propio -->
+    <script src="js/menu.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
