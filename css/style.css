@@ -29,3 +29,12 @@ p{
     display: flex;
     justify-content: center;
 }
+.divPago{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+#pagar{
+    color: red;
+    border: 0;
+}

@@ -1,13 +1,16 @@
 let pedido = [];
+const pedidoLS=JSON.parse(localStorage.getItem("pedidoLS"))
 const contenedorMenu = document.getElementById("contenedorMenu")
 const btnOrdenar = document.getElementById("ordenar")
 const sumaTotal = document.getElementById("sumaTotal")
+const pagar = document.getElementById("pagar")
 
 function agregarAlPedido(opcionId) {
     
     const pedir = menu.find((plato)=>plato.id===opcionId)
     pedido.push(pedir)
     console.log(pedido)
+    localStorage.setItem("pedidoLS", JSON.stringify(pedido))
     sumarPedido()
 }
 function sumarPedido(){
@@ -16,12 +19,26 @@ function sumarPedido(){
         suma+=pedidos.precio
     }
     sumaTotal.innerText=suma
+    return suma
+}
+
+function pago(){
+    swal("¡Gracias por confiar en nosotros!", `Acercate a la caja. Pagarás $ ${sumarPedido()}` , "success");
+    localStorage.removeItem("pedidoLS")
+    sumaTotal.innerText=0
+    pedido=[]
 }
 
 
 
 //Ejecucion del programa
-sumaTotal.innerText=0
+
+if (pedidoLS){
+    pedido=pedidoLS
+    sumaTotal.innerText=sumarPedido()
+}else{
+    sumaTotal.innerText=0
+}
 menu.forEach((opcion) => {
     const div = document.createElement("div");
     div.setAttribute("class", "divMenu")
@@ -35,5 +52,9 @@ menu.forEach((opcion) => {
         agregarAlPedido(opcion.id)
     })
 })
+pagar.addEventListener("click", () => {
+    pago()
+})
+
 
 
