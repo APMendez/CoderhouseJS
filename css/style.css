@@ -3,6 +3,29 @@ h1{
     padding: 1rem;
     text-align: center;
 }
+h2{
+    padding: 2rem;
+    text-align: center;
+}
+h3{
+    padding: 2rem;
+}
 p{
     font-size: 20px;
+}
+.divMenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80vw;
+    padding: 1rem;
+    margin: 0.5rem;
+
+}
+.divMenu>*{
+    width: 30%;
+}
+.total{
+    display: flex;
+    justify-content: center;
 }
