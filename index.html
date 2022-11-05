@@ -10,34 +10,50 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- CDN Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <!-- Hoja de estilo personalizada -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <main>
+    <header>
         <h1>¡BIENVENIDO/A A SIAP!</h1>
+    </header>
+    <main>
+        
 
     <h2>SISTEMA INTEGRAL DE AUTOGESTION DE PEDIDOS</h2>
 
     <h3>Mirá nuestro menú y hacé tu orden:</h3>
 
-    <div id="contenedorMenu"></div>
+    <div class="menu">
+        <div id="contenedorMenuCarnes" class="contenedorMenu"></div>
+        <div id="contenedorMenuPastas" class="contenedorMenu"></div>
+        <div id="contenedorMenuPizzas" class="contenedorMenu"></div>
+        <div id="contenedorMenuHamburguesas" class="contenedorMenu"></div>
+        <div id="contenedorMenuEnsaladas" class="contenedorMenu"></div>
+        <div id="contenedorMenuBebidas" class="contenedorMenu"></div>
+        <div id="contenedorMenuPostres" class="contenedorMenu"></div>
+    </div>
+    
 
     <div class="total">
         <p>El total de tu orden hasta ahora es: $<span id="sumaTotal"></span></p>
     </div>
 
     <div class="divPago">
-        <button type="submit" id="pagar">¡Quiero pagar!</button>
+        <button type="submit" id="pagar" class="boton">¡Quiero pagar!</button>
     </div>
     </main>
     
 
-    <!-- Archivo JS propio -->
+    <!-- CDN SweetAlert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="js/menu.js"></script>
+    <!-- CDN Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Archivo JS propio -->
     <script src="js/script.js"></script>
 </body>
 

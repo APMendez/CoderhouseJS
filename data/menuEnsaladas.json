@@ -1,0 +1,27 @@
+[
+    {
+        "id": 400,
+        "nombre": "Ensalada de lechuga, tomate y cebolla",
+        "precio": 500
+    },
+    {
+        "id": 401,
+        "nombre": "Ensalada de lechuga, tomate, huevo, morrones y aceitunas negras",
+        "precio": 700
+    },
+    {
+        "id": 402,
+        "nombre": "Ensalada capresse",
+        "precio": 700
+    },
+    {
+        "id": 403,
+        "nombre": "Ensalada Waldorf",
+        "precio": 800
+    },
+    {
+        "id": 404,
+        "nombre": "Ensalada Caesar",
+        "precio": 850
+    }
+]

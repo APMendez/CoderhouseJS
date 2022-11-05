@@ -1,0 +1,27 @@
+[
+    {
+        "id":300, 
+        "nombre":"Pizza a la Fugazzetta", 
+        "precio":1600 
+    },
+    {
+        "id":301, 
+        "nombre":"Pizza a la Fugazzetta", 
+        "precio":1600 
+    },
+    {
+        "id":302, 
+        "nombre":"Pizza a la Fugazzetta", 
+        "precio":1600 
+    },
+    {
+        "id":303, 
+        "nombre":"Pizza a la Fugazzetta", 
+        "precio":1600 
+    },
+    {
+        "id":304, 
+        "nombre":"Pizza a la Fugazzetta", 
+        "precio":1600 
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "id":200, 
+        "nombre":"Ravioles de verdura a la bolognesa", 
+        "precio":1000 
+    },
+    {
+        "id":201, 
+        "nombre":"Ñoquis de papa con salsa mixta", 
+        "precio":950 
+    },
+    {
+        "id":202, 
+        "nombre":"Fideos cinta con salsa filetto", 
+        "precio":850 
+    },
+    {
+        "id":203, 
+        "nombre":"Sorrentinos de jamon y queso a la paroissien", 
+        "precio":1300 
+    },
+    {
+        "id":204, 
+        "nombre":"Lasagna de Verdura y Ricotta", 
+        "precio":1400 
+    }
+]

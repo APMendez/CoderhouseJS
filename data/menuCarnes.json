@@ -1,0 +1,28 @@
+[
+    {
+        "id":1, 
+        "nombre":"Carne al horno con papas", 
+        "precio": 1500 
+    },
+    {
+        "id":2, 
+        "nombre":"Milanesa a la napolitana con papas fritas", 
+        "precio":1200 
+    },
+    {
+        "id":3, 
+        "nombre":"Parrilla para 2", 
+        "precio":1200 
+    },
+    {
+        "id":4, 
+        "nombre":"Solomillo a la mostaza", 
+        "precio":1200 
+    },
+    {
+        "id":5, 
+        "nombre":"Bondiola a la cerveza negra", 
+        "precio":1200 
+    }
+]
+

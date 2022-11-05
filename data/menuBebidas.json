@@ -1,0 +1,21 @@
+[
+    {
+        "id":600, 
+        "nombre":"Vino", 
+        "precio":750
+    },
+    {
+        "id":601, 
+        "nombre":"Agua Mineral", 
+        "precio":350},
+    {
+        "id":602, 
+        "nombre":"Gaseosa", 
+        "precio":450
+    },
+    {
+        "id":603, 
+        "nombre":"Cerveza", 
+        "precio":600
+    }
+]

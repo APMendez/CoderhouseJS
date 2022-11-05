@@ -1,0 +1,27 @@
+[
+    {
+        "id": 500,
+        "nombre": "Helado",
+        "precio": 650
+    },
+    {
+        "id": 500,
+        "nombre": "Almendrado",
+        "precio": 650
+    },
+    {
+        "id": 500,
+        "nombre": "Brownie con dulce de leche y merengue italiano",
+        "precio": 650
+    },
+    {
+        "id": 500,
+        "nombre": "Budin de pan con dulce de leche y/o crema",
+        "precio": 650
+    },
+    {
+        "id": 500,
+        "nombre": "Flan mixto",
+        "precio": 650
+    }
+]

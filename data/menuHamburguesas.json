@@ -1,0 +1,33 @@
+[
+    {
+        "id":100, 
+        "nombre":"Hamburguesa simple", 
+        "precio":950
+    },
+    {
+        "id":101, 
+        "nombre":"Hamburguesa doble con jamon y queso", 
+        "precio":1100
+    },
+    {
+        "id":102, 
+        "nombre":"Hamburguesa doble con queso azul y frutos secos", 
+        "precio":1250
+    },
+    {
+        "id":103, 
+        "nombre":"Hamburguesa doble con cheddar y panceta", 
+        "precio":1250
+    },
+    {
+        "id":104, 
+        "nombre":"Hamburguesa de lentejas con crema de pistachos", 
+        "precio":1300
+    },
+    {
+        "id":105, 
+        "nombre":"Hamburguesa de falafel con salsa de yoghurt", 
+        "precio":1150
+    }
+
+]

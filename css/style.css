@@ -1,29 +1,65 @@
+*{
+    box-sizing: border-box;
+    color: rgb(43, 72, 72);
+    font-family: sans-serif;
+    font-size: 1em;
+}
+header{
+    height: 10rem;
+    width: 100%;
+    background-image: url(../images/food-banner.jpeg);
+    z-index: 1;
+}
+main{
+    background-color: rgb(237, 237, 125);
+}
 h1{
-    background-color: rgb(16, 190, 155);
+    background-color: transparent;
     padding: 1rem;
     text-align: center;
+    z-index: 2;
 }
 h2{
     padding: 2rem;
     text-align: center;
 }
 h3{
-    padding: 2rem;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
 }
 p{
     font-size: 20px;
 }
-.divMenu{
+menu{
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.contenedorMenu{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 80vw;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1200px;
+}
+.divMenu{
     padding: 1rem;
     margin: 0.5rem;
-
+    font-size: 0.9em;
+    
 }
-.divMenu>*{
-    width: 30%;
+.boton{
+    background-color: transparent;
+    border-radius: 0.5em;
+}
+.botonAgregar:hover{
+    background-color: aqua;
+    scale: 1.1;
+    max-width: 250px;
+    min-width: 80px;
 }
 .total{
     display: flex;
@@ -36,5 +72,6 @@ p{
 }
 #pagar{
     color: red;
-    border: 0;
+    padding: 0.5rem;
+    margin: 2rem;
 }
