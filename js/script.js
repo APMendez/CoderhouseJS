@@ -81,7 +81,7 @@ const menuPastas = async () => {
     const resp = await fetch('../data/menuPastas.json')
     const data = await resp.json()
 
-    contenedorMenuPastas.innerHTML = `<h3>Pastas:</h3>`
+    contenedorMenuPastas.innerHTML = `<h3>Pastas</h3>`
     data.forEach((opcion) => {
         menu.push(opcion)
         const div = document.createElement("div");
@@ -117,7 +117,7 @@ const menuPizzas = async () => {
     const resp = await fetch('../data/menuPizzas.json')
     const data = await resp.json()
 
-    contenedorMenuPizzas.innerHTML = `<h3>Pizzas:</h3>`
+    contenedorMenuPizzas.innerHTML = `<h3>Pizzas</h3>`
     data.forEach((opcion) => {
         menu.push(opcion)
         const div = document.createElement("div");
@@ -153,7 +153,7 @@ const menuHamburguesas = async () => {
     const resp = await fetch('../data/menuHamburguesas.json')
     const data = await resp.json()
 
-    contenedorMenuHamburguesas.innerHTML = `<h3>Hamburguesas:</h3>`
+    contenedorMenuHamburguesas.innerHTML = `<h3>Hamburguesas</h3>`
     data.forEach((opcion) => {
         menu.push(opcion)
         const div = document.createElement("div");
@@ -189,7 +189,7 @@ const menuEnsaladas = async () => {
     const resp = await fetch('../data/menuEnsaladas.json')
     const data = await resp.json()
 
-    contenedorMenuEnsaladas.innerHTML = `<h3>Ensaladas:</h3>`
+    contenedorMenuEnsaladas.innerHTML = `<h3>Ensaladas</h3>`
     data.forEach((opcion) => {
         menu.push(opcion)
         const div = document.createElement("div");
@@ -225,7 +225,7 @@ const menuBebidas = async () => {
     const resp = await fetch('../data/menuBebidas.json')
     const data = await resp.json()
 
-    contenedorMenuBebidas.innerHTML = `<h3>Bebidas:</h3>`
+    contenedorMenuBebidas.innerHTML = `<h3>Bebidas</h3>`
     data.forEach((opcion) => {
         menu.push(opcion)
         const div = document.createElement("div");
@@ -257,11 +257,12 @@ const menuBebidas = async () => {
         })
     })
 }
+
 const menuPostres = async () => {
     const resp = await fetch('../data/menuPostres.json')
     const data = await resp.json()
 
-    contenedorMenuPostres.innerHTML = `<h3>Postres:</h3>`
+    contenedorMenuPostres.innerHTML = `<h3>Postres</h3>`
     data.forEach((opcion) => {
         menu.push(opcion)
         const div = document.createElement("div");
@@ -307,7 +308,7 @@ menuPostres()
 console.log(menu);
 pedidoLS ? (pedido=pedidoLS, sumaTotal.innerText=sumarPedido()) : sumaTotal.innerText=0
 pagar.addEventListener("click", () => {
-    pedidoLS ? pago() : pagoVacio()
+    pedido.length!=0 ? pago() : pagoVacio()
 })
 
 
