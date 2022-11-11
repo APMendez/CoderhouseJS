@@ -2,7 +2,7 @@
     box-sizing: border-box;
     color: rgb(43, 72, 72);
     font-family: 'roboto' !important;
-    font-size: 0.9rem !;
+    font-size: 1rem !important;
 }
 header{
     height: 35vw;
@@ -75,6 +75,7 @@ h3{
     text-align: center;
     width: 100%;
     text-decoration: underline;
+    font-size: 1.3rem !important;
 }
 menu{
     width: 95vw;

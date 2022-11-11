@@ -10,8 +10,6 @@ const contenedorMenuEnsaladas = document.getElementById("contenedorMenuEnsaladas
 const contenedorMenuBebidas = document.getElementById("contenedorMenuBebidas")
 const contenedorMenuPostres = document.getElementById("contenedorMenuPostres")
 const divConfirmarPedido = document.getElementById("confirmarPedido")
-const btnOrdenar = document.getElementById("ordenar")
-const sumaTotal = document.getElementById("sumaTotal")
 const sumaSinConfirmar = document.getElementById("sumaSinConfirmar")
 const pagar = document.getElementById("pagar")
 const listaVerPedido = document.getElementById("listaVerPedido")
@@ -20,6 +18,7 @@ const dropdownPedido = document.getElementById("dropdownPedido")
 const navbar = document.getElementById("navbar")
 const confirmo = document.getElementById("confirmo")
 const cancelo = document.getElementById("cancelo")
+
 //DECLARACION DE FUNCIONES
 
 function agregarAlPedido(opcionId) {
@@ -85,6 +84,18 @@ function confirmarPedido(){
         pedido.length=0
         console.log("pedido confirmado")
         console.log(pedido);
+        Toastify({
+            text: "¡Tu orden ya está marchando!",
+            duration: 1500,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+            background: "linear-gradient (to right, #b00000, #e78a8a)",
+            className: "info",
+            },
+            onClick: function(){} // Callback after click
+        }).showToast();
     }else{
         const primerPedidoGeneral = localStorage.setItem("pedidoLS", JSON.stringify(pedido))
         sumarPedido(primerPedidoGeneral)
@@ -92,7 +103,19 @@ function confirmarPedido(){
         divConfirmarPedido.style.display="none"
         pedido.length=0
         console.log("pedido confirmado")
-        console.log(pedido);        
+        console.log(pedido);  
+        Toastify({
+            text: "¡Tu orden ya está marchando!",
+            duration: 1500,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+            background: "linear-gradient (to right, #b00000, #e78a8a)",
+            className: "info",
+            },
+            onClick: function(){} // Callback after click
+        }).showToast();
     }    
 }
 
@@ -108,7 +131,8 @@ function cancelarPedido(){
         position: "left", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-        background: "linear-gradient (to right, #b00000, #e78a8a)",
+        background: "red",
+        className: "error",
         },
         onClick: function(){} // Callback after click
     }).showToast();
@@ -420,11 +444,14 @@ const menuPostres = async () => {
 
 
 //EJECUCION DEL PROGRAMA
+
 divConfirmarPedido.style.display="none"
+//Listener para boton de pago
 pagar.addEventListener("click", () => {
     (JSON.parse(localStorage.getItem("pedidoLS"))) ? pago() : pagoVacio()
 })
 
+//mostrar navbar si hay un pedido confirmado
 if(JSON.parse(localStorage.getItem("pedidoLS"))){
     navbar.style.display="flex"
     
@@ -435,9 +462,8 @@ if(JSON.parse(localStorage.getItem("pedidoLS"))){
 
 botonVerPedido.addEventListener("click", ()=>{
     verPedido()
-}
+})
 
-)
 menuCarnes()
 menuPastas()
 menuPizzas()
