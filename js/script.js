@@ -1,6 +1,7 @@
+//DECLARACION DE VARIABLES Y CONSTANTES
+
 const menu = []
-let pedido = []
-const pedidoLS=JSON.parse(localStorage.getItem("pedidoLS"))
+var pedido = []
 const contenedorMenuCarnes = document.getElementById("contenedorMenuCarnes")
 const contenedorMenuPastas = document.getElementById("contenedorMenuPastas")
 const contenedorMenuPizzas = document.getElementById("contenedorMenuPizzas")
@@ -8,37 +9,159 @@ const contenedorMenuHamburguesas = document.getElementById("contenedorMenuHambur
 const contenedorMenuEnsaladas = document.getElementById("contenedorMenuEnsaladas")
 const contenedorMenuBebidas = document.getElementById("contenedorMenuBebidas")
 const contenedorMenuPostres = document.getElementById("contenedorMenuPostres")
-
+const divConfirmarPedido = document.getElementById("confirmarPedido")
 const btnOrdenar = document.getElementById("ordenar")
 const sumaTotal = document.getElementById("sumaTotal")
+const sumaSinConfirmar = document.getElementById("sumaSinConfirmar")
 const pagar = document.getElementById("pagar")
+const listaVerPedido = document.getElementById("listaVerPedido")
+const botonVerPedido = document.getElementById("botonVerPedido")
+const dropdownPedido = document.getElementById("dropdownPedido")
+const navbar = document.getElementById("navbar")
+const confirmo = document.getElementById("confirmo")
+const cancelo = document.getElementById("cancelo")
+//DECLARACION DE FUNCIONES
 
 function agregarAlPedido(opcionId) {
-    
-    const pedir = menu.find((plato)=>plato.id===opcionId)
-    pedido.push(pedir)
-    console.log(pedido)
-    localStorage.setItem("pedidoLS", JSON.stringify(pedido))
-    sumarPedido()
-}
-function sumarPedido(){
-    let suma=0
-    for (let pedidos of pedido){
-        suma+=pedidos.precio
+    if (pedido.length==0){
+        const pedir = menu.find((plato)=>plato.id===opcionId)
+        pedido.push(pedir)
+        console.log(pedido)
+        divConfirmarPedido.style.display="flex"
+        sumaSinConfirmar.innerText= `${sumarPedidoSinConfirmar()}`
+        confirmo.addEventListener("click", ()=>{
+            confirmarPedido()
+        })
+        cancelo.addEventListener("click", ()=>{
+            cancelarPedido()
+        })
+    }else{
+        const pedir = menu.find((plato)=>plato.id===opcionId)
+        pedido.push(pedir)
+        console.log(pedido)
+        sumaSinConfirmar.innerText= `${sumarPedidoSinConfirmar()}`
     }
-    sumaTotal.innerText=suma
-    return suma
+        
+    
+    
+}
+function sumarPedidoSinConfirmar(){
+    let sumaPrevia=0
+    for (let pedidos of pedido){
+        sumaPrevia+=pedidos.precio
+    }
+    return sumaPrevia
+}
+function sumarPedido(primerPedido){
+    if(primerPedido!=null){
+        var suma=0
+        for (let pedidos of primerPedido){
+            suma+=pedidos.precio
+        }
+        
+        return suma
+    }else{
+        var suma=0
+        if (JSON.parse(localStorage.getItem("pedidoLS"))){
+            let localSt=JSON.parse(localStorage.getItem("pedidoLS"))
+            for (let pedidos of localSt){
+                suma+=pedidos.precio
+            }
+            
+            return suma
+        }
+        
+    }
+    
+    
+}
+function confirmarPedido(){
+    if (JSON.parse(localStorage.getItem("pedidoLS"))){
+        let pedidoGeneral=[...JSON.parse(localStorage.getItem("pedidoLS"))]
+        pedidoGeneral.push(...pedido)
+        localStorage.setItem("pedidoLS", JSON.stringify(pedidoGeneral))
+        sumarPedido(pedidoGeneral)
+        divConfirmarPedido.style.display="none"
+        pedido.length=0
+        console.log("pedido confirmado")
+        console.log(pedido);
+    }else{
+        const primerPedidoGeneral = localStorage.setItem("pedidoLS", JSON.stringify(pedido))
+        sumarPedido(primerPedidoGeneral)
+        navbar.style.display = "block"
+        divConfirmarPedido.style.display="none"
+        pedido.length=0
+        console.log("pedido confirmado")
+        console.log(pedido);        
+    }    
 }
 
+function cancelarPedido(){
+    pedido.length=0
+    divConfirmarPedido.style.display="none"
+    console.log(pedido);
+    console.log("pedido cancelado");
+    Toastify({
+        text: "Tu pedido ha sido cancelado",
+        duration: 1500,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+        background: "linear-gradient (to right, #b00000, #e78a8a)",
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
+    
+}
+//FUNCIONES DE PAGO
+
 function pago(){
+    sumarPedido()
     swal("¡Gracias por confiar en nosotros!", `Acercate a la caja. Pagarás $ ${sumarPedido()}` , "success");
-    localStorage.removeItem("pedidoLS")
-    sumaTotal.innerText=0
-    pedido=[]
+    window.localStorage.clear()
+    pedido.length=0
+    verPedido()
+    navbar.style.display="none"
+    divConfirmarPedido.style.display="none"
 }
 function pagoVacio(){
     swal("Todavia no hiciste ningún pedido", "Para pagar debés realizar un pedido primero" , "error")
 }
+
+//FUNCION PARA VER PEDIDO
+function verPedido(){
+    if(JSON.parse(localStorage.getItem("pedidoLS"))){
+        listaVerPedido.innerHTML= `
+        `
+        const pedidoLS = [...JSON.parse(localStorage.getItem("pedidoLS"))]
+        pedidoLS.forEach(
+            (ls)=>{
+                const liPedido = document.createElement("li")
+            liPedido.setAttribute("class", "dropdown-item")
+            liPedido.innerHTML=`
+            <p>
+            - ${ls.nombre} - $${ls.precio}
+            </p>
+            
+            `
+            listaVerPedido.appendChild(liPedido)
+            }
+        )
+        const totalVerPedido = document.createElement("li")
+        totalVerPedido.setAttribute("class", "dropdown-item")
+        totalVerPedido.innerText=`
+        El total de tu orden es $${sumarPedido()}
+        `
+        listaVerPedido.appendChild(totalVerPedido)
+        
+    }else{
+        navbar.style.display="none"
+    }
+    
+}
+
+//FUNCIONES PARA GENERAR LOS MENU EN EL DOM
 
 const menuCarnes = async () => {
     const resp = await fetch('../data/menuCarnes.json')
@@ -296,8 +419,25 @@ const menuPostres = async () => {
 }
 
 
+//EJECUCION DEL PROGRAMA
+divConfirmarPedido.style.display="none"
+pagar.addEventListener("click", () => {
+    (JSON.parse(localStorage.getItem("pedidoLS"))) ? pago() : pagoVacio()
+})
 
-//Ejecucion del programa
+if(JSON.parse(localStorage.getItem("pedidoLS"))){
+    navbar.style.display="flex"
+    
+}else{
+    navbar.style.display="none"
+    
+}
+
+botonVerPedido.addEventListener("click", ()=>{
+    verPedido()
+}
+
+)
 menuCarnes()
 menuPastas()
 menuPizzas()
@@ -305,11 +445,10 @@ menuHamburguesas()
 menuEnsaladas()
 menuBebidas()
 menuPostres()
-console.log(menu);
-pedidoLS ? (pedido=pedidoLS, sumaTotal.innerText=sumarPedido()) : sumaTotal.innerText=0
-pagar.addEventListener("click", () => {
-    pedido.length!=0 ? pago() : pagoVacio()
-})
+sumarPedido()
+
+
+
 
 
 

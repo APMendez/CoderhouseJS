@@ -1,8 +1,8 @@
 *{
     box-sizing: border-box;
     color: rgb(43, 72, 72);
-    font-family: 'roboto';
-    font-size: 0.9rem;
+    font-family: 'roboto' !important;
+    font-size: 0.9rem !;
 }
 header{
     height: 35vw;
@@ -12,6 +12,48 @@ header{
     background-repeat: repeat-x;
     background-size: contain;
     z-index: 3;
+}
+.navbar{
+    background-color: rgb(237, 237, 125) !important; 
+    color: rgb(43, 72, 72) !important;
+    padding: 1rem;
+    
+}
+#listaVerPedido{
+    background-color: rgb(43, 72, 72);
+    width: fit-content;
+    
+}
+#listaVerPedido *{
+    color: rgb(237, 237, 125) !important;
+    font-weight: 200;
+    font-size: 0.8rem;
+}
+.opcionesNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.opcionesNav>ul{
+    width: 80%;
+    justify-content: space-around;
+}
+#confirmo{
+    background: linear-gradient(to right, #00b09b, #96c93d) ;
+}
+#cancelo{
+    color: white;
+    background-color: red;
+    height: 100%;
+}
+#confirmarPedido{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: fit-content;
+    position: fixed;
+    top: 90vh;
+    left: 5vw;
 }
 main{
     background-color: rgb(237, 237, 125);
@@ -26,6 +68,7 @@ h1{
 h2{
     text-align: center;
     padding: 2rem;
+    background-color: linear-gradient (to right, #b00000, #f9d5d5);
 }
 h3{
     padding: 1rem;
@@ -55,7 +98,12 @@ menu{
 }
 .card{
     background-color: transparent;
-    border: 0.2rem solid rgb(43, 72, 72);
+    border: 0.2rem solid rgb(43, 72, 72);  
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
 }
 .boton{
     background-color: transparent;
@@ -83,9 +131,4 @@ menu{
     display: flex;
     justify-content: center;
     font-size: 3rem;
-}
-#pagar{
-    color: red;
-    padding: 0.5rem;
-    margin: 2rem;
 }
